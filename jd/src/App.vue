@@ -32,6 +32,10 @@ body{
   font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
   color: #666;
 }
+@font-face {
+    font-family: iconfont;
+    src: url("/fonts/iconfont.woff");
+}
 a{
   color:#999;
 }
