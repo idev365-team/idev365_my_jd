@@ -1,71 +1,23 @@
 <template>
-    <Dropdown class="my-city" title="上海" :showIcon="true">
-          <ul class="city-menus">
-            <li><a>北京</a></li>
-            <li class="active"><a>上海</a></li>
-            <li><a>天津</a></li>
-            <li><a>重庆</a></li>
-            <li><a>河北</a></li>
-            <li><a>山西</a></li>
-            <li><a>河南</a></li>
-            <li><a>辽宁</a></li>
-            <li><a>吉林</a></li>
-            <li><a>黑龙江</a></li>
-            <li><a>内蒙古</a></li>
-            <li><a>江苏</a></li>
-            <li><a>山东</a></li>
-            <li><a>安徽</a></li>
-            <li><a>浙江</a></li>
-            <li><a>福建</a></li>
-            <li><a>湖北</a></li>
-            <li><a>湖南</a></li>
-            <li><a>广东</a></li>
-            <li><a>广西</a></li>
-            <li><a>江西</a></li>
-            <li><a>四川</a></li>
-            <li><a>海南</a></li>
-            <li><a>贵州</a></li>
-            <li><a>云南</a></li>
-            <li><a>西藏</a></li>
-            <li><a>陕西</a></li>
-            <li><a>甘肃</a></li>
-            <li><a>青海</a></li>
-            <li><a>宁夏</a></li>
-            <li><a>新疆</a></li>
-            <li><a>港澳</a></li>
-            <li><a>台湾</a></li>
-            <li><a>钓鱼岛</a></li>
-            <li><a>海外</a></li>
-          </ul>
-          <div class="split"/>
-          <div class="row-title">地区专享版本</div>
-          <div class="row-title">中國港澳</div>
-          <div class="split"/>
-          <div class="row-title">Available Sites</div>
+    <Dropdown 
+                class="my-jd" 
+                title="企业采购" 
+                titleFontColor="red"
+                :showRightDownIcon="true" 
+                :panelWidth="157"
+            >
           <ul class="site-list">
               <li class="item">
-                  <i class="flag-icon global"></i>
-                  <span>Global Site</span>
+                  <span>企业购</span>
               </li>
-
               <li class="item">
-                  <i class="flag-icon russia"></i>
-                  <span>Сайт России</span>
+                  <span>商用场景馆</span>
               </li>
-
               <li class="item">
-                  <i class="flag-icon indonesia"></i>
-                  <span>Situs Indonesia</span>
+                  <span>工业品</span>
               </li>
-
               <li class="item">
-                  <i class="flag-icon spain"></i>
-                  <span>Sitio de España</span>
-              </li>
-
-              <li class="item">
-                  <i class="flag-icon thailand"></i>
-                  <span>เว็บไซต์ประเทศไทย</span>
+                  <span>礼品卡</span>
               </li>
           </ul>
         </Dropdown>
@@ -82,9 +34,8 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-.my-city{
-    margin-left: 200px;
+<style lang="scss">
+.my-jd{
     .city-menus{
       margin:0;
       padding: 0;
@@ -129,9 +80,14 @@ export default {
     .site-list{
         margin:0;
         padding:0;
+        &::after{
+            display: block;
+            content: "";
+            clear: both;
+        }
         .item{
             list-style: none;
-            width:145px;
+            width:50%;
             float: left;
             line-height: 26px;
             color: #8f8f8f;

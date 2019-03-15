@@ -2,10 +2,11 @@
     <div class="dropdown">
 
         <a class="menu-title" href="#">
-            <i class="icon"></i>
-            {{title}}
+            <i v-if="showIcon" class="icon"></i>
+            <span :style="getTitleStyle">{{title}}</span>
+            <i v-if="showRightDownIcon" class="icon downarrow"></i>
         </a>
-        <div class="inner-panel">
+        <div class="inner-panel" :style="getInnerPanelStyle">
             <slot></slot>
         </div>
     </div>
@@ -19,6 +20,36 @@ export default {
     props:{
         "title":{
             default:"下拉菜单"
+        },
+        "showIcon":{
+            default:false,
+        },
+        "panelWidth":{
+            default:300,
+        },
+        "titleFontColor":{},
+        "showRightDownIcon":{
+            default:false,
+        },
+        "isPanelDirectionLeft":{
+            default:true, //left, right
+        },
+        "panelStyle":{
+
+        }
+    },
+    computed:{
+        getInnerPanelStyle(){
+            return [{
+                width:this.panelWidth+"px",
+                left:this.isPanelDirectionLeft&&"0px",
+                right:(!this.isPanelDirectionLeft)&&"5px",
+            },this.panelStyle]
+        },
+        getTitleStyle(){
+            return {
+                color:this.titleFontColor,
+            }
         }
     }
 }
@@ -45,6 +76,9 @@ export default {
             font-size: 14px;
             color: #f10215;
             margin-right: 4px; 
+            &.downarrow{
+                color:#999;
+            }
         }
     }
 
@@ -53,12 +87,12 @@ export default {
         padding:10px;
         position: absolute;
         top:30px;
-        left:0;
         width:300px;
         min-height:50px;
         background-color: white;
         border:solid 1px #ccc;
         display: none;
+        box-shadow: 1px 2px 1px rgba(0,0,0,.1);
     }
 
     &:hover{
