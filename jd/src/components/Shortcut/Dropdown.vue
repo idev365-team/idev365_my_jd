@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .dropdown{
     display: inline-block;
     z-index: 10;
@@ -55,7 +55,7 @@ export default {
         top:30px;
         left:0;
         width:300px;
-        height:200px;
+        min-height:50px;
         background-color: white;
         border:solid 1px #ccc;
         display: none;

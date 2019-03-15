@@ -2,7 +2,7 @@
     <span class="split"></span>
 </template>
 
-<style lang="scss">
+<style lang="scss"  scoped>
 .split{
     display: inline-block;
     width:1px;

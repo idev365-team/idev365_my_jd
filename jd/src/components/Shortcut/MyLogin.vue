@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss"  scoped>
 .mylogin{
     display: inline-block;
     margin-right: 5px;
